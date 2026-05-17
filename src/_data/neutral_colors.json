@@ -1,0 +1,78 @@
+[
+  {
+    "name": "White",
+    "oklch": "oklch(1 0 0)"
+  },
+  {
+    "name": "Text",
+    "oklch": "oklch(0.97 0 0)"
+  },
+  {
+    "name": "Subtext 1",
+    "oklch": "oklch(0.921875 0 0)"
+  },
+  {
+    "name": "Subtext 0",
+    "oklch": "oklch(0.87375 0 0)"
+  },
+  {
+    "name": "Overlay 2",
+    "oklch": "oklch(0.7775 0 0)"
+  },
+  {
+    "name": "Overlay 1",
+    "oklch": "oklch(0.68125 0 0)"
+  },
+  {
+    "name": "Overlay 0",
+    "oklch": "oklch(0.585 0 0)"
+  },
+  {
+    "name": "Surface 2",
+    "oklch": "oklch(0.48875 0 0)"
+  },
+  {
+    "name": "Surface 1",
+    "oklch": "oklch(0.3925 0 0)"
+  },
+  {
+    "name": "Surface 0",
+    "oklch": "oklch(0.29625 0 0)"
+  },
+  {
+    "name": "Monokai Background",
+    "oklch": "oklch(0.2737 0.0109 114.8)"
+  },
+  {
+    "name": "Catppuccin Mocha Background",
+    "oklch": "oklch(.24 .03 284)"
+  },
+  {
+    "name": "Monokai Pro Specturm Background",
+    "oklch": "oklch(0.2134 0 0)"
+  },
+  {
+    "name": "Base",
+    "oklch": "oklch(0.2 0 0)"
+  },
+  {
+    "name": "Preferred Background Color",
+    "oklch": "oklch(0.2 0 0)"
+  },
+  {
+    "name": "Mantle",
+    "oklch": "oklch(0.15 0 0)"
+  },
+  {
+    "name": "Crust",
+    "oklch": "oklch(0.10 0 0)"
+  },
+  {
+    "name": "Black",
+    "oklch": "oklch(0 0 0)"
+  },
+  {
+    "name": "Transaparent",
+    "oklch": "oklch(0 0 0 / 0)"
+  }
+]

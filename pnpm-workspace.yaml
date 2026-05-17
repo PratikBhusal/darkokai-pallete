@@ -1,0 +1,4 @@
+allowBuilds:
+  esbuild: true
+# patchedDependencies:
+# '@alpinejs/collapse': patches/@alpinejs__collapse.patch

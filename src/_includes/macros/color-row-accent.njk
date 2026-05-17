@@ -1,0 +1,31 @@
+{% from "macros/copy-btn-oklch.njk" import copyBtnOklch %}
+{% from "macros/copy-btn-accent.njk" import copyBtnAccent %}
+{% macro colorRowAccent(color) %}
+  <tr class="hover:bg-darkokai-surface_0/30">
+    <td class="py-3 px-2">
+      <div class="inline-flex gap-0.25 bg-darkokai-white p-0.5 rounded">
+        {% set swatchBgs = [
+          {name: "Base", slug: "base", rounded: "rounded-l"},
+          {name: "Mantle", slug: "mantle", rounded: ""},
+          {name: "Crust", slug: "crust", rounded: "rounded-r"}
+        ] %}
+        {% for bg in swatchBgs %}
+          <span
+            class="inline-flex items-center justify-center w-8 h-8 {{ bg.rounded }} bg-darkokai-{{ bg.slug }}"
+            title="bg: {{ bg.name }}"
+          >
+            <span class="inline-block w-5 h-5 rounded-full bg-{{ color.slug }}"></span>
+          </span>
+        {% endfor %}
+      </div>
+    </td>
+    <td class="py-3 px-2">
+      <span class="text-darkokai-text font-medium">{{ color.name }}</span>
+    </td>
+    <td class="py-3 px-2 text-right">
+      {{ copyBtnOklch(color.oklch_display, color.oklch) }}
+    </td>
+    <td class="py-3 px-2 text-right">{{ copyBtnAccent(color.hex) }}</td>
+    <td class="py-3 px-2 text-right">{{ copyBtnAccent(color.rgb) }}</td>
+  </tr>
+{% endmacro %}

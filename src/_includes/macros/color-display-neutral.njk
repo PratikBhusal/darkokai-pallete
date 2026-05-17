@@ -1,0 +1,22 @@
+{% from "macros/color-row-neutral.njk" import colorRowNeutral %}
+
+{% macro colorDisplayNeutral(colors) %}
+  <div class="overflow-x-auto">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr
+          class="border-b border-darkokai-surface_0 text-darkokai-subtext_0 text-sm uppercase tracking-wider"
+        >
+          <th class="py-2 px-2 font-medium">Color</th>
+          <th class="py-2 px-2 font-medium">Name</th>
+          <th class="py-2 px-2 text-right font-medium">OKLCH</th>
+          <th class="py-2 px-2 text-right font-medium">Hex</th>
+          <th class="py-2 px-2 text-right font-medium">RGB</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-darkokai-surface_0/30">
+        {% for color in colors %}{{ colorRowNeutral(color) }}{% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endmacro %}

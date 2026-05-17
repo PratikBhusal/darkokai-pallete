@@ -1,0 +1,7 @@
+{% macro gradientBar(colors) %}
+  {% set gradient %}{% for color in colors %}var(--color-{{ color.slug }}){% if not loop.last %},{% endif %}{% endfor %}{% endset %}
+  <div
+    class="w-full h-2 rounded-full"
+    style="background-image: linear-gradient(90deg, {{ gradient }})"
+  ></div>
+{% endmacro %}
