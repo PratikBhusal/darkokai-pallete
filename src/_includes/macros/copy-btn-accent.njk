@@ -1,0 +1,12 @@
+{% macro copyBtnAccent(value) %}
+  <button
+    class="font-mono px-1.5 py-0.5 rounded bg-transparent border-none text-inherit cursor-pointer inline-flex items-center gap-1 transition-colors hover:bg-darkokai-surface_0/50 [&.copied]:text-darkokai-default-green [&.copied_.icon-copy]:hidden [&.copied_.icon-check]:inline [&.failed]:text-darkokai-default-red"
+    x-data="copyBtn"
+    title="{{ value }}"
+    x-on:click="copy('{{ value }}')"
+  >
+    {% include "icons/icon-copy.svg" %}
+    {% include "icons/icon-check.svg" %}
+    <span>{{ value }}</span>
+  </button>
+{% endmacro %}

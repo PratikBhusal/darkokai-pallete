@@ -1,0 +1,162 @@
+{
+  "accent": [
+    {
+      "name": "Rosewater",
+      "hex": "#f5e0dc",
+      "rgb": "rgb(245, 224, 220)",
+      "oklch": "oklch(0.92 0.02 30)"
+    },
+    {
+      "name": "Flamingo",
+      "hex": "#f2cdcd",
+      "rgb": "rgb(242, 205, 205)",
+      "oklch": "oklch(0.88 0.04 18)"
+    },
+    {
+      "name": "Pink",
+      "hex": "#f5c2e7",
+      "rgb": "rgb(245, 194, 231)",
+      "oklch": "oklch(0.87 0.08 336)"
+    },
+    {
+      "name": "Mauve",
+      "hex": "#cba6f7",
+      "rgb": "rgb(203, 166, 247)",
+      "oklch": "oklch(0.79 0.12 305)"
+    },
+    {
+      "name": "Red",
+      "hex": "#f38ba8",
+      "rgb": "rgb(243, 139, 168)",
+      "oklch": "oklch(0.76 0.13 3)"
+    },
+    {
+      "name": "Maroon",
+      "hex": "#eba0ac",
+      "rgb": "rgb(235, 160, 172)",
+      "oklch": "oklch(0.78 0.09 9)"
+    },
+    {
+      "name": "Peach",
+      "hex": "#fab387",
+      "rgb": "rgb(250, 179, 135)",
+      "oklch": "oklch(0.82 0.1 53)"
+    },
+    {
+      "name": "Yellow",
+      "hex": "#f9e2af",
+      "rgb": "rgb(249, 226, 175)",
+      "oklch": "oklch(0.92 0.07 87)"
+    },
+    {
+      "name": "Green",
+      "hex": "#a6e3a1",
+      "rgb": "rgb(166, 227, 161)",
+      "oklch": "oklch(0.86 0.11 143)"
+    },
+    {
+      "name": "Teal",
+      "hex": "#94e2d5",
+      "rgb": "rgb(148, 226, 213)",
+      "oklch": "oklch(0.86 0.08 183)"
+    },
+    {
+      "name": "Sky",
+      "hex": "#89dceb",
+      "rgb": "rgb(137, 220, 235)",
+      "oklch": "oklch(0.85 0.08 210)"
+    },
+    {
+      "name": "Sapphire",
+      "hex": "#74c7ec",
+      "rgb": "rgb(116, 199, 236)",
+      "oklch": "oklch(0.79 0.1 229)"
+    },
+    {
+      "name": "Blue",
+      "hex": "#89b4fa",
+      "rgb": "rgb(137, 180, 250)",
+      "oklch": "oklch(0.77 0.11 260)"
+    },
+    {
+      "name": "Lavender",
+      "hex": "#b4befe",
+      "rgb": "rgb(180, 190, 254)",
+      "oklch": "oklch(0.82 0.09 277)"
+    }
+  ],
+  "neutral": [
+    {
+      "name": "Text",
+      "hex": "#cdd6f4",
+      "rgb": "rgb(205, 214, 244)",
+      "oklch": "oklch(0.88 0.04 272)"
+    },
+    {
+      "name": "Subtext 1",
+      "hex": "#bac2de",
+      "rgb": "rgb(186, 194, 222)",
+      "oklch": "oklch(0.82 0.04 273)"
+    },
+    {
+      "name": "Subtext 0",
+      "hex": "#a6adc8",
+      "rgb": "rgb(166, 173, 200)",
+      "oklch": "oklch(0.75 0.04 274)"
+    },
+    {
+      "name": "Overlay 2",
+      "hex": "#9399b2",
+      "rgb": "rgb(147, 153, 178)",
+      "oklch": "oklch(0.69 0.04 275)"
+    },
+    {
+      "name": "Overlay 1",
+      "hex": "#7f849c",
+      "rgb": "rgb(127, 132, 156)",
+      "oklch": "oklch(0.62 0.04 276)"
+    },
+    {
+      "name": "Overlay 0",
+      "hex": "#6c7086",
+      "rgb": "rgb(108, 112, 134)",
+      "oklch": "oklch(0.55 0.03 277)"
+    },
+    {
+      "name": "Surface 2",
+      "hex": "#585b70",
+      "rgb": "rgb(88, 91, 112)",
+      "oklch": "oklch(0.48 0.03 279)"
+    },
+    {
+      "name": "Surface 1",
+      "hex": "#45475a",
+      "rgb": "rgb(69, 71, 90)",
+      "oklch": "oklch(0.4 0.03 280)"
+    },
+    {
+      "name": "Surface 0",
+      "hex": "#313244",
+      "rgb": "rgb(49, 50, 68)",
+      "oklch": "oklch(0.32 0.03 282)"
+    },
+    {
+      "name": "Base",
+      "hex": "#1e1e2e",
+      "rgb": "rgb(30, 30, 46)",
+      "oklch": "oklch(0.24 0.03 284)"
+    },
+    {
+      "name": "Mantle",
+      "hex": "#181825",
+      "rgb": "rgb(24, 24, 37)",
+      "oklch": "oklch(0.22 0.03 284)"
+    },
+    {
+      "name": "Crust",
+      "hex": "#11111b",
+      "rgb": "rgb(17, 17, 27)",
+      "oklch": "oklch(0.18 0.02 284)"
+    }
+  ]
+}

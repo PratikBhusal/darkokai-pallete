@@ -1,0 +1,24 @@
+{% macro colorTopSection(title, startOpen=true) %}
+  <div x-data="collapsible" {% if not startOpen %}data-collapsed{% endif %}>
+    <button
+      x-on:click="toggle"
+      class="cursor-pointer bg-transparent border-none p-0 w-full text-left flex items-center gap-2"
+    >
+      <span
+        class="text-darkokai-subtext_0 text-sm transition-transform duration-250"
+        x-bind:class="open ? 'rotate-90' : ''"
+        >&#9654;</span
+      >
+      <h2 class="text-darkokai-text font-semibold text-2xl inline">
+        {{ title }}
+      </h2>
+    </button>
+    <div
+      x-show="open"
+      x-collapse:enter.duration.500ms
+      x-collapse:leave.duration.250ms
+    >
+      {{ caller() }}
+    </div>
+  </div>
+{% endmacro %}

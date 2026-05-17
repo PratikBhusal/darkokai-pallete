@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@import "./theme.css";
+
+@source "../../src/**/*.njk";
+
+@theme {
+    --color-neutral-50: oklch(0.97 0 0);
+    --color-neutral-75: oklch(0.921875 0 0);
+    --color-neutral-100: oklch(0.87375 0 0);
+    --color-neutral-200: oklch(0.7775 0 0);
+    --color-neutral-300: oklch(0.68125 0 0);
+    --color-neutral-400: oklch(0.585 0 0);
+    --color-neutral-500: oklch(0.48875 0 0);
+    --color-neutral-600: oklch(0.3925 0 0);
+    --color-neutral-700: oklch(0.29625 0 0);
+    --color-neutral-800: oklch(0.2 0 0);
+    --color-neutral-900: oklch(0.15 0 0);
+    --color-neutral-950: oklch(0.1 0 0);
+
+    --animate-gradient-scroll: gradient-scroll 4s linear infinite forwards;
+}
+
+@keyframes gradient-scroll {
+    from {
+        background-position: 0% center;
+    }
+    to {
+        background-position: 100% center;
+    }
+}
+
+@utility bg-double {
+    background-size: 200% 100%;
+}

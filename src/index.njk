@@ -1,0 +1,90 @@
+---
+layout: base.njk
+title: "Darkokai"
+---
+
+{% from "macros/color-top-section.njk" import colorTopSection %}
+{% from "macros/color-section.njk" import colorSection %}
+{% from "macros/color-display-accent.njk" import colorDisplayAccent %}
+{% from "macros/color-display-neutral.njk" import colorDisplayNeutral %}
+{% from "macros/gradient-bar.njk" import gradientBar %}
+{% from "macros/wrapped-gradient-bar.njk" import wrappedGradientBar %}
+{% from "macros/accent-animated-gradient-bar.njk" import accentAnimatedGradientBar %}
+{% from "macros/neutral-animated-gradient-bar.njk" import neutralAnimatedGradientBar %}
+
+<div>
+  <div class="mb-8">
+    <h1 class="text-darkokai-text font-black text-4xl mb-3">
+      {{ title }} Palette
+    </h1>
+    <p class="text-darkokai-text max-w-3xl leading-relaxed mb-3 text-justify">
+      A monokai inspired color theme with a darker vibe background and slight
+      accent color changes.
+    </p>
+  </div>
+
+  <div class="bg-darkokai-mantle rounded-lg p-4 md:p-6 mb-6">
+    {% call colorTopSection("Accents") %}
+      <p class="text-darkokai-text max-w-3xl leading-relaxed my-3 text-justify">
+        There are two accent palette. The color names are based on the closest
+        tailwindcss color for the default palette.
+      </p>
+
+      {% call colorSection("Default") %}
+        <p
+          class="text-darkokai-text max-w-3xl leading-relaxed my-3 text-justify"
+        >
+          Unlike the maximum consistency palette, this palette mixes things up a
+          bit so that we can have higher chroma and lightness values to make
+          things more vibrant and to my tastes. The anchor point it to have 0.75
+          lightness and 0.2 chroma.
+        </p>
+        <div class="mb-4">
+          {{ accentAnimatedGradientBar(get_colors.accent_default) }}
+        </div>
+        {{ colorDisplayAccent(get_colors.accent_default) }}
+        <div class="mt-4">
+          {{ wrappedGradientBar(get_colors.accent_default) }}
+        </div>
+      {% endcall %}
+      {% call colorSection("Maximum Consistency", false) %}
+        <p
+          class="text-darkokai-text max-w-3xl leading-relaxed my-3 text-justify"
+        >
+          Maximum consistency fixes lightness and chroma at the cost of
+          potentially muted colors (eg: yellow).
+        </p>
+        <p
+          class="text-darkokai-text max-w-3xl leading-relaxed my-3 text-justify"
+        >
+          I may not use it, but I will try to at least support this palette
+          initially. I may prefer one over the other under certain
+          circumstances.
+        </p>
+        <div class="mb-4">
+          {{ wrappedGradientBar(get_colors.accent_consistent) }}
+        </div>
+        {{ colorDisplayAccent(get_colors.accent_consistent) }}
+        <div class="mt-4">
+          {{ accentAnimatedGradientBar(get_colors.accent_consistent) }}
+        </div>
+      {% endcall %}
+    {% endcall %}
+  </div>
+
+  <div class="bg-darkokai-mantle rounded-lg p-4 md:p-6 mb-6">
+    {% call colorTopSection("Neutrals") %}
+      <p class="text-darkokai-text max-w-3xl leading-relaxed my-3 text-justify">
+        The neutral colors are all roughly evenly spaced between each other.
+        Background colors from other popular themes are provided a comparison
+        point.
+      </p>
+      <p class="text-darkokai-text max-w-3xl leading-relaxed mb-3 text-justify">
+        The naming scheme is taken from catppuccin.
+      </p>
+      <div class="mb-4">{{ neutralAnimatedGradientBar(get_colors.neutral) }}</div>
+      {{ colorDisplayNeutral(get_colors.neutral) }}
+      <div class="mt-4">{{ gradientBar(get_colors.neutral) }}</div>
+    {% endcall %}
+  </div>
+</div>

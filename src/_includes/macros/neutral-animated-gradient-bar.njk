@@ -1,0 +1,8 @@
+{% macro neutralAnimatedGradientBar(colors) %}
+  {% set fwd %}{% for color in colors %}var(--color-{{ color.slug }}){% if not loop.last %},{% endif %}{% endfor %}{% endset %}
+  {% set rev %}{% for color in colors | reverse %}var(--color-{{ color.slug }}){% if not loop.last %},{% endif %}{% endfor %}{% endset %}
+  <div
+    class="w-full h-2 rounded-full bg-double animate-gradient-scroll"
+    style="background-image: linear-gradient(90deg, {{ fwd ~ "," ~ rev ~ "," ~ fwd ~ "," ~ rev }})"
+  ></div>
+{% endmacro %}

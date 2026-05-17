@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Red",
+    "todo": "There was a bug when trying to get this value. Need to recompute it",
+    "oklch": "oklch(0.7465715625000002 0.19642766249200863 29.28921409859271)",
+    "oklch_display": "oklch(0.746572 0.196427 29.2892)"
+  },
+  {
+    "todo": "Recompute based on red",
+    "name": "Amber",
+    "oklch": "oklch(0.7523850000000001 0.19049491050742232 67.31972657946244)",
+    "oklch_display": "oklch(0.752385 0.190494 67.3197)"
+  },
+  {
+    "name": "Yellow",
+    "note": "Calculated by forcing the chroma to 0.2 and finding the lowest lightness value that works with the given hue in the display P3 colorspace All others are claculated by delta-E",
+    "oklch": "oklch(0.8006659105759796 0.2 107.43621863950031)",
+    "oklch_display": "oklch(0.800666 0.199999 107.4362)"
+  },
+  {
+    "name": "Green",
+    "oklch": "oklch(0.75 0.2 146.50971404120088)",
+    "oklch_display": "oklch(0.75 0.2 146.5097)"
+  },
+  {
+    "name": "Teal",
+    "oklch": "oklch(0.75 0.18023835041975392 183.6464140220703)",
+    "oklch_display": "oklch(0.75 0.180238 183.6464)"
+  },
+  {
+    "name": "Sky",
+    "oklch": "oklch(0.75 0.18750946059249887 224.65671400293968)",
+    "oklch_display": "oklch(0.75 0.187509 224.6567)"
+  },
+  {
+    "name": "Purple",
+    "oklch": "oklch(0.7437660693359374 0.19225116610392187 308.9520838261569)",
+    "oklch_display": "oklch(0.743766 0.192251 308.9521)"
+  }
+]

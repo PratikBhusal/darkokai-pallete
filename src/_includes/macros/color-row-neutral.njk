@@ -1,0 +1,56 @@
+{% from "macros/copy-btn-neutral.njk" import copyBtnNeutral %}
+{% macro colorRowNeutral(color) %}
+  <tr class="hover:bg-darkokai-surface_0/30">
+    <td class="py-3 px-2">
+      {% set darkSwatches = ["Base", "Preferred Background Color", "Monokai Background", "Monokai Pro Specturm Background", "Monokai Pro Specturm Background","Catppuccin Mocha Background", "Mantle", "Crust", "Black"] %}
+      {% if color.name in darkSwatches %}
+        <div class="inline-flex bg-darkokai-text p-0.5 rounded">
+          <span class="inline-flex items-center justify-center w-8 h-8">
+            <span
+              class="inline-block w-5 h-5 rounded-full bg-{{ color.slug }}"
+            ></span>
+          </span>
+        </div>
+      {% else %}
+        <div class="inline-flex gap-0.25 bg-darkokai-white p-0.5 rounded">
+          <span
+            class="inline-flex items-center justify-center w-8 h-8 rounded-l bg-darkokai-base"
+            title="bg: Base"
+          >
+            <span
+              class="inline-block w-5 h-5 rounded-full bg-{{ color.slug }}"
+            ></span>
+          </span>
+          <span
+            class="inline-flex items-center justify-center w-8 h-8 bg-darkokai-mantle"
+            title="bg: Mantle"
+          >
+            <span
+              class="inline-block w-5 h-5 rounded-full bg-{{ color.slug }}"
+            ></span>
+          </span>
+          <span
+            class="inline-flex items-center justify-center w-8 h-8 rounded-r bg-darkokai-crust"
+            title="bg: Crust"
+          >
+            <span
+              class="inline-block w-5 h-5 rounded-full bg-{{ color.slug }}"
+            ></span>
+          </span>
+        </div>
+      {% endif %}
+    </td>
+    <td class="py-3 px-2">
+      <span class="text-darkokai-text font-medium">{{ color.name }}</span>
+    </td>
+    <td class="py-3 px-2 text-right">
+      {{ copyBtnNeutral(color.oklch, color.oklch) }}
+    </td>
+    <td class="py-3 px-2 text-right">
+      {{ copyBtnNeutral(color.hex, color.hex) }}
+    </td>
+    <td class="py-3 px-2 text-right">
+      {{ copyBtnNeutral(color.rgb, color.rgb) }}
+    </td>
+  </tr>
+{% endmacro %}
