@@ -1,5 +1,4 @@
 // @ts-check
-import { setClasses } from "alpinejs/src/utils/classes";
 
 /**
  * @typedef {import('alpinejs').Alpine} Alpine
@@ -15,7 +14,7 @@ import { setClasses } from "alpinejs/src/utils/classes";
 
 /**
  * @typedef {Object} TransitionPhase
- * @property {string | Record<string, string>} during
+ * @property {Record<string, string>} during
  * @property {Record<string, string>} start
  * @property {Record<string, string>} end
  */
@@ -43,9 +42,6 @@ import { setClasses } from "alpinejs/src/utils/classes";
  * - `x-collapse.duration.500ms` — custom duration for both enter and leave
  * - `x-collapse:enter.duration.500ms` — custom enter duration only
  * - `x-collapse:leave.duration.250ms` — custom leave duration only
- * - `x-collapse:enter="duration-500"` — Tailwind class-based enter transition
- * - `x-collapse:leave="duration-250"` — Tailwind class-based leave transition
- * - `x-collapse="duration-300"` — Tailwind class-based transition for both
  *
  * @param {Alpine} Alpine
  */
@@ -64,40 +60,11 @@ export default function (Alpine) {
 
     /**
      * @param {HTMLElement} el
-     * @param {{ value: CollapseStage, modifiers: string[], expression: string }} directive
+     * @param {{ value: CollapseStage, modifiers: string[] }} directive
      */
-    function collapse(el, { value, modifiers, expression }) {
-        // Check tailwindcss classes
-        if (typeof expression === "string" && expression.length > 0) {
-            registerCollapseFromClassString(el, expression, value, Alpine);
-        } else {
-            registerCollapseFromModifiers(el, modifiers, value, Alpine);
-        }
+    function collapse(el, { value, modifiers }) {
+        registerCollapseFromModifiers(el, modifiers, value, Alpine);
     }
-}
-
-/**
- * Register collapse transition using CSS class strings (e.g. Tailwind classes).
- *
- * @param {HTMLElement} el
- * @param {string} classString
- * @param {CollapseStage} stage
- * @param {Alpine} Alpine
- */
-function registerCollapseFromClassString(el, classString, stage, Alpine) {
-    registerCollapseObject(el, Alpine);
-
-    let doesntSpecify = !stage;
-
-    if (doesntSpecify || stage === "enter") {
-        el._x_transition.enter.during = classString;
-    }
-
-    if (doesntSpecify || stage === "leave") {
-        el._x_transition.leave.during = classString;
-    }
-
-    applyInitialState(el);
 }
 
 /**
@@ -161,29 +128,15 @@ function applyInitialState(el) {
 }
 
 /**
- * Returns a set function that handles both class strings and style objects.
- * When `during` is a class string, dispatches to setClasses for strings
- * and Alpine.setStyles for objects (height values). When `during` is a
- * style object, uses Alpine.setStyles exclusively.
+ * Returns a set function for transition style objects.
  *
- * @param {string | Record<string, string>} during
  * @param {Alpine} Alpine
  * @param {boolean} [preventHeightRevert=false] - When true, prevents the
  *   height style from being reverted during cleanup (needed for the "out"
  *   transition to keep the element collapsed).
- * @returns {(el: HTMLElement, value: string | Record<string, string>) => () => void}
+ * @returns {(el: HTMLElement, value: Record<string, string>) => () => void}
  */
-function getSetFunction(during, Alpine, preventHeightRevert = false) {
-    if (typeof during === "string") {
-        // Hybrid: use setClasses for class strings, setStyles for style objects
-        return (el, value) => {
-            if (typeof value === "string") return setClasses(el, value);
-            let revertFunction = Alpine.setStyles(el, value);
-            return preventHeightRevert && value.height ? () => {} : revertFunction;
-        };
-    }
-
-    // Inline styles only
+function getSetFunction(Alpine, preventHeightRevert = false) {
     return (el, styles) => {
         let revertFunction = Alpine.setStyles(el, styles);
         return preventHeightRevert && styles.height ? () => {} : revertFunction;
@@ -229,7 +182,7 @@ function registerCollapseObject(el, Alpine) {
 
             Alpine.transition(
                 el,
-                getSetFunction(during, Alpine, false),
+                getSetFunction(Alpine, false),
                 {
                     during: during,
                     start: { height: current + "px" },
@@ -251,7 +204,7 @@ function registerCollapseObject(el, Alpine) {
 
             Alpine.transition(
                 el,
-                getSetFunction(during, Alpine, true),
+                getSetFunction(Alpine, true),
                 {
                     during: during,
                     start: { height: full + "px" },
